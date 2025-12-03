@@ -1,0 +1,384 @@
+{
+  "notes": "Batten sheep - organization (intra/inter), Day-4 change, MI/Adj/Mod, +KRL ablation, gate significance, hyperparams & runtime.",
+  "PRROC_intra_vs_inter": [
+    {
+      "metric": "tsmi",
+      "AUROC_baseline": 0.5015781470693169,
+      "AUROC_plusKRL": 0.685500244977054
+    },
+    {
+      "metric": "te",
+      "AUROC_baseline": 0.4946213103767637,
+      "AUROC_plusKRL": 0.6103363516624228
+    },
+    {
+      "metric": "gc",
+      "AUROC_baseline": 0.509064761914071,
+      "AUROC_plusKRL": 0.545509986022257
+    }
+  ],
+  "perm_test_auroc_gain": [
+    {
+      "metric": "tsmi",
+      "AUROC_base": 0.5015781470693169,
+      "AUROC_plusKRL": 0.685500244977054,
+      "delta": 0.18392209790773706,
+      "p_perm": 0.0012484394506866417
+    },
+    {
+      "metric": "te",
+      "AUROC_base": 0.4946213103767637,
+      "AUROC_plusKRL": 0.6103363516624228,
+      "delta": 0.11571504128565913,
+      "p_perm": 0.0012484394506866417
+    },
+    {
+      "metric": "gc",
+      "AUROC_base": 0.509064761914071,
+      "AUROC_plusKRL": 0.545509986022257,
+      "delta": 0.03644522410818596,
+      "p_perm": 0.0012484394506866417
+    }
+  ],
+  "delta_after_day4": [
+    {
+      "metric": "tsmi",
+      "pair_class": "intra_H",
+      "delta_after_day4": 5.867714053826955e-06
+    },
+    {
+      "metric": "tsmi",
+      "pair_class": "intra_S",
+      "delta_after_day4": 1.718466373257477e-05
+    },
+    {
+      "metric": "tsmi",
+      "pair_class": "inter",
+      "delta_after_day4": 1.2261943427105518e-05
+    },
+    {
+      "metric": "te",
+      "pair_class": "intra_H",
+      "delta_after_day4": 0.0023213642555851193
+    },
+    {
+      "metric": "te",
+      "pair_class": "intra_S",
+      "delta_after_day4": -0.00027390577202772177
+    },
+    {
+      "metric": "te",
+      "pair_class": "inter",
+      "delta_after_day4": 0.0010879561904407926
+    },
+    {
+      "metric": "gc",
+      "pair_class": "intra_H",
+      "delta_after_day4": 0.00035261535983083236
+    },
+    {
+      "metric": "gc",
+      "pair_class": "intra_S",
+      "delta_after_day4": -0.010099297327918616
+    },
+    {
+      "metric": "gc",
+      "pair_class": "inter",
+      "delta_after_day4": 0.006293226468351065
+    },
+    {
+      "metric": "tsmi_krl",
+      "pair_class": "intra_H",
+      "delta_after_day4": 0.004765435035573132
+    },
+    {
+      "metric": "tsmi_krl",
+      "pair_class": "intra_S",
+      "delta_after_day4": 0.0005895859120517149
+    },
+    {
+      "metric": "tsmi_krl",
+      "pair_class": "inter",
+      "delta_after_day4": 0.0004997830029577592
+    },
+    {
+      "metric": "te_krl",
+      "pair_class": "intra_H",
+      "delta_after_day4": 0.006949773270892912
+    },
+    {
+      "metric": "te_krl",
+      "pair_class": "intra_S",
+      "delta_after_day4": 0.0002797008304524619
+    },
+    {
+      "metric": "te_krl",
+      "pair_class": "inter",
+      "delta_after_day4": 0.0015833357912111165
+    },
+    {
+      "metric": "gc_krl",
+      "pair_class": "intra_H",
+      "delta_after_day4": 0.006714290943846096
+    },
+    {
+      "metric": "gc_krl",
+      "pair_class": "intra_S",
+      "delta_after_day4": -0.009792139470991557
+    },
+    {
+      "metric": "gc_krl",
+      "pair_class": "inter",
+      "delta_after_day4": 0.007404004295959249
+    }
+  ],
+  "ablation_intra_vs_inter": [
+    {
+      "ablation": "tsmi_only",
+      "cols": "tsmi",
+      "AUROC_intra_vs_inter": 0.501575894318976,
+      "AUPR_intra_vs_inter": 0.4627280687292415
+    },
+    {
+      "ablation": "te_only",
+      "cols": "te",
+      "AUROC_intra_vs_inter": 0.4946213103767637,
+      "AUPR_intra_vs_inter": 0.4623552521361951
+    },
+    {
+      "ablation": "gc_only",
+      "cols": "gc",
+      "AUROC_intra_vs_inter": 0.509064761914071,
+      "AUPR_intra_vs_inter": 0.46682577972366035
+    },
+    {
+      "ablation": "tsmi_te",
+      "cols": "tsmi,te",
+      "AUROC_intra_vs_inter": 0.49802659070137967,
+      "AUPR_intra_vs_inter": 0.46513091328002776
+    },
+    {
+      "ablation": "tsmi_te_gc",
+      "cols": "tsmi,te,gc",
+      "AUROC_intra_vs_inter": 0.5041410896774856,
+      "AUPR_intra_vs_inter": 0.47016620183474067
+    },
+    {
+      "ablation": "krl_only",
+      "cols": "krl",
+      "AUROC_intra_vs_inter": 0.5283531157904512,
+      "AUPR_intra_vs_inter": 0.49207407260937697
+    },
+    {
+      "ablation": "tsmi_krl",
+      "cols": "tsmi_krl",
+      "AUROC_intra_vs_inter": 0.685500244977054,
+      "AUPR_intra_vs_inter": 0.6761838450978348
+    },
+    {
+      "ablation": "te_krl",
+      "cols": "te_krl",
+      "AUROC_intra_vs_inter": 0.6103363516624228,
+      "AUPR_intra_vs_inter": 0.6192184488735148
+    },
+    {
+      "ablation": "gc_krl",
+      "cols": "gc_krl",
+      "AUROC_intra_vs_inter": 0.545509986022257,
+      "AUPR_intra_vs_inter": 0.4694107343948488
+    },
+    {
+      "ablation": "tsmi_te_krl",
+      "cols": "tsmi_krl,te_krl",
+      "AUROC_intra_vs_inter": 0.6373342281206777,
+      "AUPR_intra_vs_inter": 0.6455206632406056
+    },
+    {
+      "ablation": "tsmi_te_gc_krl",
+      "cols": "tsmi_krl,te_krl,gc_krl",
+      "AUROC_intra_vs_inter": 0.6191351363074322,
+      "AUPR_intra_vs_inter": 0.6240188640095846
+    }
+  ],
+  "gate_significance": [
+    {
+      "metric": "tsmi",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 2.6417534636021176e-05,
+      "mean_high": 6.907311592596903e-05,
+      "delta_high_minus_low": 4.265558128994785e-05,
+      "cliffs_delta": 0.074902,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "te",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.005896459531344236,
+      "mean_high": 0.005397469848008193,
+      "delta_high_minus_low": -0.0004989896833360423,
+      "cliffs_delta": -0.07793,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "gc",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.24930376419342606,
+      "mean_high": 0.24346893438732825,
+      "delta_high_minus_low": -0.005834829806097813,
+      "cliffs_delta": -0.046142,
+      "p_perm_mean_diff": 0.5561097256857855
+    },
+    {
+      "metric": "tsmi_krl",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.00010371747362427032,
+      "mean_high": 0.009373829887861578,
+      "delta_high_minus_low": 0.009270112414237308,
+      "cliffs_delta": 0.998954,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "te_krl",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.005925013369217147,
+      "mean_high": 0.013642788951826914,
+      "delta_high_minus_low": 0.0077177755826097665,
+      "cliffs_delta": 0.5731,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "gc_krl",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.24845809614159742,
+      "mean_high": 0.23084003137340278,
+      "delta_high_minus_low": -0.017618064768194636,
+      "cliffs_delta": 0.17226,
+      "p_perm_mean_diff": 0.057356608478802994
+    },
+    {
+      "metric": "krl",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.00912312030165215,
+      "mean_high": 0.04673081578767145,
+      "delta_high_minus_low": 0.037607695486019305,
+      "cliffs_delta": 0.848194,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "dist",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 83.29182321531785,
+      "mean_high": 34.63071843801963,
+      "delta_high_minus_low": -48.66110477729822,
+      "cliffs_delta": -0.64778,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "align",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.004985355129623496,
+      "mean_high": 0.06286274266790633,
+      "delta_high_minus_low": 0.05787738753828283,
+      "cliffs_delta": 0.542189,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "coloc",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.08748249397143387,
+      "mean_high": 0.30986127987039286,
+      "delta_high_minus_low": 0.22237878589895899,
+      "cliffs_delta": 0.619362,
+      "p_perm_mean_diff": 0.0024937655860349127
+    },
+    {
+      "metric": "svar",
+      "gate_low_thr": 0.1668865715872203,
+      "gate_high_thr": 0.39768483834446916,
+      "n_low": 2396,
+      "n_high": 2469,
+      "mean_low": 0.6559306811584128,
+      "mean_high": 0.7776148415006537,
+      "delta_high_minus_low": 0.12168416034224094,
+      "cliffs_delta": 0.339892,
+      "p_perm_mean_diff": 0.0024937655860349127
+    }
+  ],
+  "hyperparameters": {
+    "WINDOW_SIZE": 3600,
+    "WINDOW_STEP": 1800,
+    "BLK_SIZE1": 21600,
+    "BLK_SIZE2": 600,
+    "STRIDES": [
+      1,
+      2
+    ],
+    "LAGS": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "TE_NBINS": [
+      6,
+      8,
+      12
+    ],
+    "GC_MAXLAGS": [
+      2,
+      4
+    ],
+    "TAU_DIST": 35.0,
+    "TAU_ALIGN": 0.25,
+    "TAU_R2": 0.01,
+    "TAU_LCONS": 0.4,
+    "TAU_COLOC": 0.35,
+    "TAU_SVAR": 0.45,
+    "LAG_TEMP": 0.5,
+    "RIDGE_ALPHA": 1.0,
+    "N_SURR": 30,
+    "USE_IDTXL": true
+  },
+  "gate_stats": {
+    "gate_mean": 0.34122332292383833,
+    "gate_std": 0.26210783650804675,
+    "gate_q05": 0.03564882459675397,
+    "gate_q50": 0.2628536175673085,
+    "gate_q95": 0.88194012982955,
+    "prop_gate_gt_0_5": 0.24862258953168045,
+    "prop_gate_gt_0_75": 0.11584022038567493
+  },
+  "runtime_seconds": 119162.83852529526,
+  "n_edges": 7260,
+  "n_windows": 66
+}

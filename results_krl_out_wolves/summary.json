@@ -1,0 +1,7 @@
+{
+  "n_sims": 10,
+  "has_idtxl": true,
+  "total_runtime_seconds": 33972.127848386765,
+  "hp_sweep_enabled": false,
+  "hp_profiles": []
+}

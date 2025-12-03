@@ -1,0 +1,59 @@
+{
+  "use_idtxl": true,
+  "has_idtxl": true,
+  "window_size": 600,
+  "window_step": 600,
+  "lags": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "strides": [
+    1,
+    2,
+    3
+  ],
+  "te_nbins": [
+    6,
+    8,
+    12
+  ],
+  "gc_maxlags": [
+    2,
+    4,
+    6
+  ],
+  "taus": {
+    "TAU_DIST": 0.2,
+    "TAU_ALIGN": 0.2,
+    "TAU_R2": 0.01,
+    "TAU_LCONS": 0.4,
+    "TAU_PSI_VAR": 0.15
+  },
+  "num_edges": 228,
+  "num_windows": 114,
+  "phase_times_seconds": {
+    "load_seconds": 0.29846692085266113,
+    "compute_edges_seconds": 40.343337297439575,
+    "attach_labels_seconds": 0.3103063106536865,
+    "evaluate_seconds": 29.24842405319214
+  },
+  "component_times_seconds": {
+    "krl_components": 31.663986206054688,
+    "gate": 0.07930731773376465,
+    "tsmi": 9.995779752731323,
+    "te": -4.717551946640015,
+    "gc": -5.691307783126831
+  },
+  "gate_distribution": {
+    "mean": 0.8867488772463896,
+    "std": 0.27316743861122617,
+    "min": 3.55618930202682e-14,
+    "max": 1.0,
+    "q25": 0.971785978064929,
+    "median": 0.9995159728937665,
+    "q75": 0.9999926085695763
+  },
+  "hyperparameters_notes": "All main hyperparameters are set via environment variables (KRL_WINDOW_SIZE, KRL_WINDOW_STEP, KRL_LAG_TEMP, KRL_RIDGE_ALPHA, KRL_TAU_DIST, KRL_TAU_ALIGN, KRL_TAU_R2, KRL_TAU_LCONS, KRL_TAU_PSI_VAR, KRL_POS_THETA_COLS, KRL_POS_RADIUS_COLS, KRL_HEADING_COLS, KRL_ALIGN_COLS)."
+}
